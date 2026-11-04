@@ -1,5 +1,5 @@
 window.YD = window.YD || {};
-YD.SAVE_KEY = 'yedang_mvp_v1';
+YD.SAVE_KEY = 'yedang_mvp_v2';
 
 YD.save = function (state) {
   try {
@@ -59,6 +59,10 @@ YD.serialize = function (s) {
     missedRent: s.missedRent,
     upgrades: s.upgrades,
     stats: s.stats,
+    museum: s.museum || [],
+    castSeen: s.castSeen || {},
+    castAffinity: s.castAffinity || {},
+    bounties: s.bounties || [],
     gameOver: s.gameOver,
     gameOverReason: s.gameOverReason,
   };
