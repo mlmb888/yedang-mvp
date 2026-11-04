@@ -1,0 +1,69 @@
+window.YD = window.YD || {};
+/* 扁平 SVG 图标，有限色，无渐变 */
+YD.iconSvg = function (kind, size) {
+  const s = size || 48;
+  const c = YD.PALETTE;
+  const stroke = c.text;
+  const fill = c.panel2;
+  const accent = c.accent;
+  const map = {
+    watch: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="18" y="4" width="12" height="8" rx="2" fill="${fill}" stroke="${stroke}" stroke-width="2"/><circle cx="24" cy="26" r="14" fill="${fill}" stroke="${stroke}" stroke-width="2"/><circle cx="24" cy="26" r="2" fill="${accent}"/><path d="M24 26 L24 18 M24 26 L32 28" stroke="${accent}" stroke-width="2" fill="none"/><rect x="18" y="40" width="12" height="6" rx="2" fill="${fill}" stroke="${stroke}" stroke-width="2"/></svg>`,
+    ring: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="28" r="12" fill="none" stroke="${stroke}" stroke-width="4"/><path d="M18 18 L24 8 L30 18" fill="${accent}" stroke="${stroke}" stroke-width="2"/></svg>`,
+    camera: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="24" rx="4" fill="${fill}" stroke="${stroke}" stroke-width="2"/><circle cx="24" cy="26" r="8" fill="none" stroke="${stroke}" stroke-width="2"/><circle cx="24" cy="26" r="3" fill="${accent}"/><rect x="14" y="10" width="10" height="6" rx="1" fill="${fill}" stroke="${stroke}" stroke-width="2"/></svg>`,
+    radio: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="6" y="16" width="36" height="22" rx="3" fill="${fill}" stroke="${stroke}" stroke-width="2"/><circle cx="18" cy="27" r="6" fill="none" stroke="${accent}" stroke-width="2"/><rect x="28" y="22" width="10" height="3" fill="${stroke}"/><rect x="28" y="28" width="10" height="3" fill="${stroke}"/><line x1="10" y1="12" x2="30" y2="16" stroke="${stroke}" stroke-width="2"/></svg>`,
+    phone: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="14" y="6" width="20" height="36" rx="3" fill="${fill}" stroke="${stroke}" stroke-width="2"/><rect x="17" y="12" width="14" height="22" fill="${c.bg}"/><circle cx="24" cy="38" r="2" fill="${accent}"/></svg>`,
+    necklace: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M10 14 Q24 36 38 14" fill="none" stroke="${stroke}" stroke-width="2"/><circle cx="24" cy="34" r="5" fill="${accent}" stroke="${stroke}" stroke-width="2"/></svg>`,
+    gem: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M24 6 L38 18 L24 42 L10 18 Z" fill="${fill}" stroke="${stroke}" stroke-width="2"/><path d="M10 18 L38 18" stroke="${accent}" stroke-width="2"/></svg>`,
+    bracelet: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="14" ry="10" fill="none" stroke="${stroke}" stroke-width="4"/><ellipse cx="24" cy="24" rx="8" ry="5" fill="none" stroke="${accent}" stroke-width="2"/></svg>`,
+    knife: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M12 36 L30 10 L34 14 L16 40 Z" fill="${fill}" stroke="${stroke}" stroke-width="2"/><rect x="10" y="34" width="10" height="6" rx="1" fill="${accent}"/></svg>`,
+    toolbox: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="8" y="18" width="32" height="20" rx="2" fill="${fill}" stroke="${stroke}" stroke-width="2"/><path d="M16 18 V14 H32 V18" fill="none" stroke="${stroke}" stroke-width="2"/><rect x="20" y="24" width="8" height="6" fill="${accent}"/></svg>`,
+    bell: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M16 28 a8 8 0 0 1 16 0" fill="none" stroke="${stroke}" stroke-width="3"/><circle cx="24" cy="14" r="3" fill="${accent}"/></svg>`,
+    book: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M10 10 H24 V38 H12 C10 38 10 10 10 10 Z" fill="${fill}" stroke="${stroke}" stroke-width="2"/><path d="M38 10 H24 V38 H36 C38 38 38 10 38 10 Z" fill="${c.panel}" stroke="${stroke}" stroke-width="2"/></svg>`,
+    disc: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="${fill}" stroke="${stroke}" stroke-width="2"/><circle cx="24" cy="24" r="4" fill="${accent}"/><circle cx="24" cy="24" r="10" fill="none" stroke="${c.muted}" stroke-width="1"/></svg>`,
+    lamp: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M14 20 H34 L30 10 H18 Z" fill="${accent}" stroke="${stroke}" stroke-width="2"/><rect x="22" y="20" width="4" height="16" fill="${stroke}"/><rect x="16" y="36" width="16" height="4" fill="${fill}" stroke="${stroke}" stroke-width="2"/></svg>`,
+    bag: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="8" y="16" width="32" height="24" rx="2" fill="${fill}" stroke="${stroke}" stroke-width="2"/><path d="M16 16 V12 H32 V16" fill="none" stroke="${stroke}" stroke-width="2"/><circle cx="24" cy="28" r="2" fill="${accent}"/></svg>`,
+    coat: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M16 8 L24 14 L32 8 L38 18 V40 H10 V18 Z" fill="${fill}" stroke="${stroke}" stroke-width="2"/><path d="M24 14 V40" stroke="${accent}" stroke-width="2"/></svg>`,
+    shoe: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M8 30 H28 L36 34 H40 V38 H8 Z" fill="${fill}" stroke="${stroke}" stroke-width="2"/><path d="M8 30 V22 H20" fill="none" stroke="${stroke}" stroke-width="2"/></svg>`,
+    hat: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><ellipse cx="24" cy="32" rx="18" ry="5" fill="${fill}" stroke="${stroke}" stroke-width="2"/><path d="M14 32 Q14 14 24 12 Q34 14 34 32" fill="${c.panel}" stroke="${stroke}" stroke-width="2"/><rect x="14" y="22" width="20" height="4" fill="${accent}"/></svg>`,
+    laptop: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="20" rx="2" fill="${fill}" stroke="${stroke}" stroke-width="2"/><path d="M6 32 H42 L38 30 H10 Z" fill="${c.panel}" stroke="${stroke}" stroke-width="2"/></svg>`,
+    drone: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="18" y="20" width="12" height="8" rx="2" fill="${fill}" stroke="${stroke}" stroke-width="2"/><circle cx="10" cy="16" r="5" fill="none" stroke="${accent}" stroke-width="2"/><circle cx="38" cy="16" r="5" fill="none" stroke="${accent}" stroke-width="2"/><circle cx="10" cy="34" r="5" fill="none" stroke="${accent}" stroke-width="2"/><circle cx="38" cy="34" r="5" fill="none" stroke="${accent}" stroke-width="2"/><line x1="18" y1="22" x2="12" y2="18" stroke="${stroke}" stroke-width="2"/><line x1="30" y1="22" x2="36" y2="18" stroke="${stroke}" stroke-width="2"/></svg>`,
+    guitar: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="18" cy="30" r="10" fill="${fill}" stroke="${stroke}" stroke-width="2"/><rect x="26" y="8" width="6" height="22" fill="${c.panel}" stroke="${stroke}" stroke-width="2"/><circle cx="18" cy="30" r="3" fill="${accent}"/></svg>`,
+    statue: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="14" r="6" fill="${fill}" stroke="${stroke}" stroke-width="2"/><path d="M12 40 V24 H36 V40" fill="${fill}" stroke="${stroke}" stroke-width="2"/><rect x="18" y="24" width="12" height="8" fill="${accent}"/></svg>`,
+    vase: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M16 8 H32 L30 14 Q38 20 34 40 H14 Q10 20 18 14 Z" fill="${fill}" stroke="${stroke}" stroke-width="2"/><path d="M18 28 Q24 22 30 28" fill="none" stroke="${accent}" stroke-width="2"/></svg>`,
+    stone: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="10" y="20" width="28" height="16" rx="2" fill="${fill}" stroke="${stroke}" stroke-width="2"/><rect x="18" y="12" width="12" height="10" fill="${c.panel}" stroke="${stroke}" stroke-width="2"/></svg>`,
+    seal: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="16" y="8" width="16" height="28" rx="2" fill="${fill}" stroke="${stroke}" stroke-width="2"/><rect x="14" y="36" width="20" height="6" fill="${accent}" stroke="${stroke}" stroke-width="2"/></svg>`,
+    lens: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="${fill}" stroke="${stroke}" stroke-width="2"/><circle cx="24" cy="24" r="8" fill="none" stroke="${accent}" stroke-width="2"/><circle cx="24" cy="24" r="3" fill="${stroke}"/></svg>`,
+    gold: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="10" y="16" width="28" height="16" rx="2" fill="${accent}" stroke="${stroke}" stroke-width="2"/><line x1="14" y1="24" x2="34" y2="24" stroke="${stroke}" stroke-width="2"/></svg>`,
+    coin: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="${accent}" stroke="${stroke}" stroke-width="2"/><circle cx="24" cy="24" r="8" fill="none" stroke="${stroke}" stroke-width="2"/></svg>`,
+    amp: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="10" y="8" width="28" height="32" rx="2" fill="${fill}" stroke="${stroke}" stroke-width="2"/><circle cx="24" cy="24" r="8" fill="none" stroke="${accent}" stroke-width="2"/><rect x="18" y="34" width="12" height="3" fill="${stroke}"/></svg>`,
+    mic: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="18" y="6" width="12" height="22" rx="6" fill="${fill}" stroke="${stroke}" stroke-width="2"/><path d="M14 22 a10 10 0 0 0 20 0" fill="none" stroke="${stroke}" stroke-width="2"/><line x1="24" y1="32" x2="24" y2="40" stroke="${stroke}" stroke-width="2"/><line x1="16" y1="40" x2="32" y2="40" stroke="${accent}" stroke-width="3"/></svg>`,
+    battery: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="10" y="14" width="26" height="20" rx="2" fill="${fill}" stroke="${stroke}" stroke-width="2"/><rect x="36" y="20" width="4" height="8" fill="${stroke}"/><rect x="14" y="18" width="8" height="12" fill="${accent}"/></svg>`,
+    jade: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="none" stroke="${c.good}" stroke-width="5"/><circle cx="24" cy="24" r="6" fill="${fill}" stroke="${stroke}" stroke-width="2"/></svg>`,
+    painting: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="28" fill="${fill}" stroke="${stroke}" stroke-width="2"/><rect x="12" y="14" width="24" height="20" fill="${c.bg}" stroke="${accent}" stroke-width="2"/><path d="M14 30 L22 20 L28 26 L34 18" fill="none" stroke="${c.good}" stroke-width="2"/></svg>`,
+    bowl: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M10 18 H38 Q36 36 24 38 Q12 36 10 18" fill="${fill}" stroke="${stroke}" stroke-width="2"/><ellipse cx="24" cy="18" rx="14" ry="4" fill="${c.panel}" stroke="${stroke}" stroke-width="2"/></svg>`,
+    person: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="24" cy="14" r="8" fill="${fill}" stroke="${stroke}" stroke-width="2"/><path d="M10 40 Q10 26 24 26 Q38 26 38 40" fill="${fill}" stroke="${stroke}" stroke-width="2"/></svg>`,
+    search: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><circle cx="20" cy="20" r="10" fill="none" stroke="${stroke}" stroke-width="3"/><line x1="28" y1="28" x2="40" y2="40" stroke="${accent}" stroke-width="3"/></svg>`,
+    shop: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M6 20 L12 10 H36 L42 20 Z" fill="${accent}" stroke="${stroke}" stroke-width="2"/><rect x="10" y="20" width="28" height="18" fill="${fill}" stroke="${stroke}" stroke-width="2"/><rect x="20" y="28" width="8" height="10" fill="${c.bg}"/></svg>`,
+    warn: `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 48 48"><path d="M24 6 L44 40 H4 Z" fill="${fill}" stroke="${c.warn}" stroke-width="2"/><rect x="22" y="18" width="4" height="12" fill="${c.warn}"/><circle cx="24" cy="34" r="2" fill="${c.warn}"/></svg>`,
+  };
+  return map[kind] || map.gem;
+};
+
+YD.ITEM_ICON = {
+  watch_old: 'watch', watch_gold: 'watch', watch_chrono: 'watch', role_watch: 'watch',
+  ring_jade: 'ring', ring_silver: 'ring',
+  camera_film: 'camera', camera_dslr: 'camera', lens_camera: 'lens',
+  radio_vintage: 'radio', phone_old: 'phone', tablet: 'laptop', laptop_old: 'laptop',
+  necklace: 'necklace', earring: 'gem', bracelet: 'bracelet',
+  knife_fold: 'knife', tool_set: 'toolbox', bicycle_bell: 'bell',
+  book_stamp: 'book', vinyl: 'disc', lamp_desk: 'lamp',
+  bag_leather: 'bag', coat_wool: 'coat', shoes_leather: 'shoe', hat_felt: 'hat',
+  drone_toy: 'drone', guitar: 'guitar', statue_buddha: 'statue', vase_blue: 'vase',
+  inkstone: 'stone', seal_stone: 'seal', gold_bar_fake: 'gold', coin_set: 'coin',
+  amplifier: 'amp', mic_studio: 'mic', scooter_part: 'battery',
+  jade_bi: 'jade', oil_painting: 'painting', porcelain_bowl: 'bowl',
+};
+
+YD.itemIcon = function (defId, size) {
+  return YD.iconSvg(YD.ITEM_ICON[defId] || 'gem', size);
+};
